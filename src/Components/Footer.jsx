@@ -4,6 +4,7 @@ import { RiHeart3Line, RiHomeLine, RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 
+
 const Footer = () => {
   return (
     <div className="flex justify-center items-center gap-12 sm:gap-20 mt-5 py-5 bg-[#f6f6f6] fixed bottom-0 w-full">

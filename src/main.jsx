@@ -11,6 +11,7 @@ import LikedProducts from './Components/LikedProducts.jsx'
 import Profile from './Components/Profile.jsx'
 import ProductsPage from './Components/ProductsPage.jsx'
 import Layout from './Components/Layout.jsx'
+import ProductPageLocalData from './Components/ProductPageLocalData.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     <Routes>
         <Route path="" element={<Layout/>}>
-          <Route path="/" element={<ProductsPage/>}/>
+          <Route path="/" element={<ProductPageLocalData/>}/>
         
       <Route path="/product/:id" element={<ProductDetailsPage />} />
         <Route path="/cart" element={<Cart/>}/>

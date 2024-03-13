@@ -1,37 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import { FaRegHeart} from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 
-const ProductsPage = () => {
-
+const ProductPageLocalData = () => {
     const [products, setProducts] = useState([]);
-    const [menu,setMenu]=useState(false)
-
-
-    const fetchProducts = async (filter) => {
-      try {
-        const response = await fetch('https://cors-anywhere.herokuapp.com/'+`https://productapi-yashraj.onrender.com/api/${filter}`);
-        const data = await response.json();
-        setProducts(data);
-        console.log(data);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
+    const [menu, setMenu] = useState(false);
+  
+    const fetchProducts = (category) => {
+      import(`../database/${category}.json`) // Import JSON file dynamically
+        .then((jsonData) => {
+          setProducts(jsonData.default);
+        })
+        .catch((error) => {
+          console.error("Error fetching products:", error);
+        });
     };
-
-
+  
     useEffect(() => {
-        setTimeout(() => {
-          fetchProducts('allproducts');
-        }, 100);
-      },[]);
-
-
+      setTimeout(() => {
+        fetchProducts("allproducts");
+      }, 100);
+    }, []);
+  
     return (
-
+      
 
         <div className="flex flex-col md:flex-row h-full ">
 
@@ -105,8 +100,8 @@ const ProductsPage = () => {
 
         
         </div>
-      
     );
-  }
+  };
+  
 
-export default ProductsPage
+export default ProductPageLocalData
