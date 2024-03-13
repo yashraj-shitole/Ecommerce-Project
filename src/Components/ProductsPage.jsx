@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart} from "react-icons/fa";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import { Link } from "react-router-dom";
 
 
 const ProductsPage = () => {
 
     const [products, setProducts] = useState([]);
+    const [menu,setMenu]=useState(false)
 
 
     const fetchProducts = async (filter) => {
@@ -33,8 +36,27 @@ const ProductsPage = () => {
 
         <div className="flex flex-col md:flex-row h-full ">
 
-            
-            <div className=" md:w-[20%]">
+<div className="flex md:hidden fixed top-5 right-5 z-50">
+    <button onClick={()=>menu?setMenu(false):setMenu(true)}>
+    <RxHamburgerMenu size={30}/>
+    </button>
+</div>
+
+            <div style={menu?{display:"flex",left:"2000"}:{display:"none", left:"-200",transition:"all 1s ease-out"}}  className="fixed flex md:hidden p-10 rounded-lg shadow-xl z-10 bg-[#f5f5f5] h-fit md:w-fit">
+                <ul className='flex flex-col gap-5 md:p-10'>
+                    <li className='font-semibold text-2xl'><button onClick={() =>{fetchProducts('allproducts'); setMenu(false)}}>All Products</button></li>
+                    <li className='font-semibold text-2xl'><button onClick={() =>{ fetchProducts('tshirt'); setMenu(false)}}>Tops & T-Shirts</button></li>
+                    <li className='font-semibold text-2xl'><button onClick={() => {fetchProducts('shoes'); setMenu(false)}}>Shoes</button></li>
+                    <li className='font-semibold text-2xl'><button onClick={() => {fetchProducts('trousers'); setMenu(false)}}>Trousers & Tights</button></li>
+                    <li className='font-semibold text-2xl'><button onClick={() => {fetchProducts('accessories'); setMenu(false)}}>Accessories</button></li>
+                </ul>
+            </div>
+
+
+
+<div className="hidden  md:flex md:w-[350px]" >
+
+       <div  className="hidden md:flex fixed  top-50 ">
                 <ul className='flex flex-col gap-5 md:p-10'>
                     <li className='font-semibold text-2xl'><button onClick={() => fetchProducts('allproducts')}>All Products</button></li>
                     <li className='font-semibold text-2xl'><button onClick={() => fetchProducts('tshirt')}>Tops & T-Shirts</button></li>
@@ -43,6 +65,10 @@ const ProductsPage = () => {
                     <li className='font-semibold text-2xl'><button onClick={() => fetchProducts('accessories')}>Accessories</button></li>
                 </ul>
             </div>
+</div>
+            
+         
+
             
 
 
@@ -51,8 +77,8 @@ const ProductsPage = () => {
                         <div className="flex justify-center items-center flex-wrap py-10  gap-10 bg-white">
                     {products.map(( product,key) => (
 
-                        <Fade key={key} cascade>
-                          <Link to={{ pathname: `/product/${key}`}} state={product}  key={key}>
+                        <Fade damping={0.2} key={key} cascade>
+                            <Link to={{ pathname: `/product/${key}`}} state={product}  key={key}>
                                 <div
                                     className="h-96 w-80 p-5 flex justify-center items-center flex-col bg-[#F6F6F6] shadow-md rounded-2xl gap-2 hover:shadow-lg"
                                 >

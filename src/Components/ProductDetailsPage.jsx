@@ -1,9 +1,7 @@
-import React from 'react';
-import { FaHeart, FaRegHeart } from "react-icons/fa6";
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -31,16 +29,21 @@ const [isLiked, setIsLiked]=useState(true)
 
 
   return (
-    <div className=' flex flex-col md:flex-row w-[100%] md:h-[100vh] bg-[#f5f5f5]'>
+    <div className=' flex flex-col md:flex-row w-[100%] md:h-[100%] bg-[#f5f5f5]'>
 
 
 
         <div className='  md:w-[50%] h-[100%]  flex flex-col gap-10 p-10'>
-                {/* Show image */}
                 <div className='h-[100%] flex items-center justify-center overflow-hidden object-cover' >
                     <img className='w-[80%]  h-auto' src={product.imageUrl} alt="" />
                 </div>
-                <div className=' flex flex-col gap-2 md:p-5'>
+               
+
+        </div>
+
+        <div className=' md:w-[50%]  md:h-[100%] flex flex-col gap-10 p-10 '>
+        <Fade cascade damping={0.2}>
+                <div className=' flex flex-col gap-2 '>
                     <div className='flex w-full justify-between'>
                         <h1 className='font-bold text-4xl'>{product.price} INR</h1>
                         <button onClick={()=>isLiked?setIsLiked(false):setIsLiked(true)}>
@@ -54,12 +57,10 @@ const [isLiked, setIsLiked]=useState(true)
                     <h1 className='text-3xl font-semibold'>{subtitle}</h1>
                 </div>
 
-        </div>
-
-        <div className=' md:w-[50%] h-[100%] flex flex-col gap-10 p-10 '>
-        <Fade cascade>
+                
 
                         <div className='flex flex-col gap-5'>
+                            <hr />
                             <h1 className='font-bold text-2xl'>Size</h1>
 
                             <div className='flex gap-3'>
@@ -73,12 +74,13 @@ const [isLiked, setIsLiked]=useState(true)
                         </div>
 
                         <div className='flex flex-col gap-5'>
+                            <hr />
                             <h1 className='font-bold text-2xl'>Description</h1>
                             <p>{product.description}</p>
                         </div>
 
                         
-                        <div className='flex items-center justify-evenly'>
+                        <div className='flex h-fit pb-20 md:pb-0 items-center justify-evenly'>
                             <button className='text-black font-medium border-[2px] border-[#383838] bg-[#C7C8CC] rounded-full w-32 h-20 text-4xl'>BUY</button>
                             <button className='text-black font-medium border-[2px] border-[#383838] bg-[#C7C8CC] rounded-full w-32 h-20 text-4xl'>CART</button>
                         </div>
