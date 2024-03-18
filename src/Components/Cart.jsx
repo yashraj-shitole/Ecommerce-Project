@@ -57,7 +57,7 @@ const Cart = () => {
 
 
   return (
-    <div className=" flex  md:p-10 gap-5 flex-col md:flex-row">
+    <div className=" flex h-[100vh] overflow-scroll  md:p-10 gap-5 flex-col md:flex-row">
 
     <div className="flex flex-col gap-5 p-5 rounded-md w-[100%] md:w-[70%]">
       <h2 className="py-4 px-8 text-xl font-bold">CART</h2>

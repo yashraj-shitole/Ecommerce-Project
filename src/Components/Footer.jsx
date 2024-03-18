@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="flex justify-center items-center gap-12 sm:gap-20 mt-5 py-5 bg-[#f6f6f6] fixed bottom-0 w-full">
+    <div className="flex justify-center items-center gap-12 sm:gap-20 mt-5 py-5 bg-[#f6f6f6] sticky bottom-0 w-full">
     <div className="flex justify-center items-center flex-col gap-2 font-medium">
       <Link className="flex justify-center items-center flex-col gap-2 font-medium" to="/">
               <RiHomeLine className="text-xl"/>

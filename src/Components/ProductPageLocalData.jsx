@@ -10,7 +10,7 @@ const ProductPageLocalData = () => {
     const [menu, setMenu] = useState(false);
   
     const fetchProducts = (category) => {
-      import(`../database/${category}.json`) // Import JSON file dynamically
+      import(`../database/${category}.json`)
         .then((jsonData) => {
           setProducts(jsonData.default);
         })
