@@ -4,8 +4,8 @@ const Profile = () => {
   return (
     <div className='flex p-5 md:p-10 flex-col h-[80vh]   items-center justify-evenly'>
       <div className='flex  flex-col gap-5 md:gap-20 items-center w-full'>
-        <div className='flex items-center justify-center rounded-full h-[200px] w-[200px]'>
-          <img src="/src/assets/avatar.png" alt="" />
+        <div className='flex overflow-hidden items-center justify-center rounded-full h-[200px] w-[200px]'>
+          <img src="https://cdn3d.iconscout.com/3d/premium/thumb/man-avatar-6299539-5187871.png?f=webp" alt="" />
         </div>
         <div>
           <h1 className='font-bold text-3xl'>Yashraj Shitole</h1>
