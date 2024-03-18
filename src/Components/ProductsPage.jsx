@@ -81,11 +81,13 @@ const ProductsPage = () => {
                                 <div
                                     className="h-96 w-80 p-5 flex justify-center items-center flex-col bg-[#F6F6F6] shadow-md rounded-2xl gap-2 hover:shadow-lg"
                                 >
-                                    <img
-                                        className="w-60 h-64"
-                                        src={product.imageUrl}
-                                        alt="product_Image"
-                                    />
+                                     <div className='w-32 md:w-40 p-2 items-center justify-center'>
+                                            <img
+                                                className="object-contain"
+                                                src={product.imageUrl}
+                                                alt=""
+                                            />
+                                    </div>
                                     <div className="flex justify-between items-center w-full">
                                         <p className="text-slate-900 text-lg">{product.price} INR</p>
                                         <FaRegHeart className="cursor-pointer" />
