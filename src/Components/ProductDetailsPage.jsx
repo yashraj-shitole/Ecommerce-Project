@@ -29,7 +29,7 @@ const [isLiked, setIsLiked]=useState(true)
 
 
   return (
-    <div className=' flex flex-col md:flex-row w-[100%] md:h-[100%] bg-[#f5f5f5]'>
+    <div className=' flex flex-col md:flex-row w-[100%] md:h-[100vh] h-[100vh] overflow-scroll bg-[#f5f5f5]'>
 
 
 
