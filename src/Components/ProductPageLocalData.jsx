@@ -28,7 +28,7 @@ const ProductPageLocalData = () => {
     return (
       
 
-        <div className="flex flex-col md:flex-row h-full ">
+        <div className="flex flex-col  md:flex-row h-[100vh] overflow-hidden ">
 
 <div className="flex md:hidden fixed top-5 right-5 z-50">
     <button onClick={()=>menu?setMenu(false):setMenu(true)}>
