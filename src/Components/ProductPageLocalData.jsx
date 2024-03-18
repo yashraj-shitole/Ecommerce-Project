@@ -74,7 +74,7 @@ const ProductPageLocalData = () => {
                         <Fade damping={0.2} key={key} cascade>
                             <Link to={{ pathname: `/product/${key}`}} state={product}  key={key}>
                                 <div
-                                    className="h-96 w-60 p-5 flex justify-center items-center flex-col bg-[#F6F6F6] shadow-md rounded-2xl gap-2 hover:shadow-lg"
+                                    className="h-96 w-80 md:w-60 p-5 flex justify-center items-center flex-col bg-[#F6F6F6] shadow-md rounded-2xl gap-2 hover:shadow-lg"
                                 >
                                      <div className='w-50 md:w-60 overflow-hidden p-2 items-center justify-center'>
                                             <img
